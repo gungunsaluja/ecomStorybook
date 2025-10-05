@@ -1,0 +1,155 @@
+/* Button Component Styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:focus {
+  box-shadow: 0 0 0 3px rgba(251, 46, 134, 0.2);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+/* Primary variant - matches the pink "Send Mail" button */
+.button--primary {
+  background: #FB2E86;
+  color: #FFFFFF;
+}
+
+.button--primary:hover:not(:disabled) {
+  background: #E91E63;
+}
+
+.button--primary:active:not(:disabled) {
+  background: #D81B60;
+}
+
+/* Secondary variant */
+.button--secondary {
+  background: #6B7280;
+  color: #FFFFFF;
+}
+
+.button--secondary:hover:not(:disabled) {
+  background: #4B5563;
+}
+
+/* Outline variant */
+.button--outline {
+  background: transparent;
+  color: #FB2E86;
+  border: 1px solid #FB2E86;
+}
+
+.button--outline:hover:not(:disabled) {
+  background: #FB2E86;
+  color: #FFFFFF;
+}
+
+/* Ghost variant */
+.button--ghost {
+  background: transparent;
+  color: #FB2E86;
+}
+
+.button--ghost:hover:not(:disabled) {
+  background: rgba(251, 46, 134, 0.1);
+}
+
+/* Danger variant */
+.button--danger {
+  background: #EF4444;
+  color: #FFFFFF;
+}
+
+.button--danger:hover:not(:disabled) {
+  background: #DC2626;
+}
+
+/* Size variants */
+.button--small {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.button--large {
+  padding: 16px 32px;
+  font-size: 16px;
+}
+
+/* Full width */
+.button--full-width {
+  width: 100%;
+}
+
+/* Disabled state */
+.button--disabled {
+  background: #D1D5DB;
+  color: #9CA3AF;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button--disabled:hover {
+  background: #D1D5DB;
+  transform: none;
+}
+
+/* Loading state */
+.button--loading {
+  cursor: not-allowed;
+}
+
+.button__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: button-spin 1s linear infinite;
+}
+
+.button__text--loading {
+  opacity: 0.7;
+}
+
+@keyframes button-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .button {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .button--small {
+    font-size: 14px;
+  }
+  
+  .button--large {
+    font-size: 18px;
+  }
+}
+
