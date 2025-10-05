@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-commerce Design System
 
-## Getting Started
+A comprehensive React design system built with Storybook, featuring reusable components for e-commerce applications.
 
-First, run the development server:
+## 🚀 Features
+
+- **Reusable Components**: Button, Input, Icon, Color, Font, Footer, NotFound
+- **Design Tokens**: Colors, Typography, and consistent styling
+- **Storybook Integration**: Interactive component documentation
+- **TypeScript Support**: Full type safety
+- **Responsive Design**: Mobile-first approach
+- **Accessibility**: WCAG compliant components
+
+## 📦 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Start Storybook
+npm run storybook
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Build Storybook
+npm run build-storybook
 
-## Learn More
+# Start Next.js development server
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Button
+- Multiple variants and sizes
+- Customizable styling
+- Accessibility features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Input
+- Form input components
+- Validation states
+- Custom styling options
 
-## Deploy on Vercel
+### Icon
+- SVG icon system
+- Customizable size and color
+- Consistent iconography
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Color
+- Color palette display
+- Design token integration
+- Brand consistency
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Font
+- Typography system
+- Font weight variations
+- Responsive typography
+
+### Footer
+- Complete footer component
+- Responsive layout
+- Social media integration
+
+### NotFound (404)
+- Custom 404 page component
+- Responsive design
+- Branded styling
+
+## 🎨 Design Tokens
+
+### Colors
+- Primary: `#FB2E86` (Pink)
+- Secondary: `#8B5CF6` (Violet)
+- Text: `#2F1893` (Dark Blue)
+- Background: `#F6F5FF` (Light Lavender)
+
+### Typography
+- **Josefin Sans**: Headings and titles
+- **Lato**: Body text and descriptions
+
+## 📖 Usage
+
+```tsx
+import { Button, Input, Icon } from 'ecomdesignsystem';
+
+// Use components in your app
+<Button variant="primary" size="large">
+  Click me
+</Button>
+
+<Input placeholder="Enter your email" />
+
+<Icon name="cart" size={24} />
+```
+
+## 🚀 Deployment
+
+The Storybook can be deployed to GitHub Pages:
+
+```bash
+npm run build-storybook
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## 📄 License
+
+MIT License - see LICENSE file for details
+
+## 🔗 Links
+
+- [Storybook Documentation](https://your-storybook-url.com)
+- [GitHub Repository](https://github.com/your-username/ecomdesignsystem)
+- [NPM Package](https://www.npmjs.com/package/ecomdesignsystem)

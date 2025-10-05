@@ -1,14 +1,34 @@
 {
   "name": "ecomdesignsystem",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A comprehensive React design system for e-commerce applications with Storybook documentation",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ecomdesignsystem.git"
+  },
+  "keywords": [
+    "react",
+    "design-system",
+    "storybook",
+    "ecommerce",
+    "components",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "prepublishOnly": "npm run build-storybook"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
