@@ -1,121 +1,124 @@
 # E-commerce Design System
 
-A comprehensive React design system built with Storybook, featuring reusable components for e-commerce applications.
+A comprehensive React design system for e-commerce applications with Storybook documentation.
 
-## 🚀 Features
+## 🚀 Quick Start
 
-- **Reusable Components**: Button, Input, Icon, Color, Font, Footer, NotFound
-- **Design Tokens**: Colors, Typography, and consistent styling
-- **Storybook Integration**: Interactive component documentation
-- **TypeScript Support**: Full type safety
-- **Responsive Design**: Mobile-first approach
-- **Accessibility**: WCAG compliant components
-
-## 📦 Installation
+### Installation
 
 ```bash
-npm install
+npm install ecomdesignsystem
 ```
 
-## 🛠️ Development
+### Basic Usage
 
-```bash
-# Start Storybook
-npm run storybook
+```tsx
+import { Button, HeadingBar, Footer } from 'ecomdesignsystem';
 
-# Build Storybook
-npm run build-storybook
-
-# Start Next.js development server
-npm run dev
+function App() {
+  return (
+    <div>
+      <HeadingBar
+        item1={{ text: "Contact", iconUrl: icons.envelope }}
+        item2={{ text: "Phone", iconUrl: icons.phone }}
+      />
+      
+      <Button variant="primary" size="medium">
+        Click me
+      </Button>
+      
+      <Footer />
+    </div>
+  );
+}
 ```
 
-## 📚 Components
+## 📦 Components
 
 ### Button
-- Multiple variants and sizes
-- Customizable styling
-- Accessibility features
+```tsx
+import { Button } from 'ecomdesignsystem';
 
-### Input
-- Form input components
-- Validation states
-- Custom styling options
+<Button variant="primary" size="medium">
+  Click me
+</Button>
+```
 
-### Icon
-- SVG icon system
-- Customizable size and color
-- Consistent iconography
+### HeadingBar
+```tsx
+import { HeadingBar, icons } from 'ecomdesignsystem';
 
-### Color
-- Color palette display
-- Design token integration
-- Brand consistency
-
-### Font
-- Typography system
-- Font weight variations
-- Responsive typography
+<HeadingBar
+  item1={{ text: "Email", iconUrl: icons.envelope }}
+  item2={{ text: "Phone", iconUrl: icons.phone }}
+/>
+```
 
 ### Footer
-- Complete footer component
-- Responsive layout
-- Social media integration
+```tsx
+import { Footer } from 'ecomdesignsystem';
 
-### NotFound (404)
-- Custom 404 page component
-- Responsive design
-- Branded styling
+<Footer />
+```
 
 ## 🎨 Design Tokens
 
-### Colors
-- Primary: `#FB2E86` (Pink)
-- Secondary: `#8B5CF6` (Violet)
-- Text: `#2F1893` (Dark Blue)
-- Background: `#F6F5FF` (Light Lavender)
+```tsx
+import { colors, typography } from 'ecomdesignsystem';
 
-### Typography
-- **Josefin Sans**: Headings and titles
-- **Lato**: Body text and descriptions
+// Use design tokens
+const style = {
+  color: colors.pink,
+  fontFamily: typography.heading.fontFamily
+};
+```
 
-## 📖 Usage
+## 🛠️ Setup Requirements
+
+### Tailwind CSS
+This design system requires Tailwind CSS. Add to your `tailwind.config.js`:
+
+```js
+module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/ecomdesignsystem/**/*.{js,ts,jsx,tsx}"
+  ],
+  // ... rest of config
+}
+```
+
+### CSS Import
+Add the design system CSS to your app:
 
 ```tsx
-import { Button, Input, Icon } from 'ecomdesignsystem';
-
-// Use components in your app
-<Button variant="primary" size="large">
-  Click me
-</Button>
-
-<Input placeholder="Enter your email" />
-
-<Icon name="cart" size={24} />
+import 'ecomdesignsystem/dist/index.css';
 ```
 
-## 🚀 Deployment
+## 📚 Storybook
 
-The Storybook can be deployed to GitHub Pages:
+View all components and examples:
 
 ```bash
-npm run build-storybook
+npm run storybook
 ```
 
-## 🤝 Contributing
+## 🔧 Development
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+```bash
+# Install dependencies
+npm install
+
+# Start Storybook
+npm run storybook
+
+# Build library
+npm run build
+
+# Run tests
+npm test
+```
 
 ## 📄 License
 
-MIT License - see LICENSE file for details
-
-## 🔗 Links
-
-- [Storybook Documentation](https://your-storybook-url.com)
-- [GitHub Repository](https://github.com/your-username/ecomdesignsystem)
-- [NPM Package](https://www.npmjs.com/package/ecomdesignsystem)
+MIT

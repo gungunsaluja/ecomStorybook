@@ -3,7 +3,7 @@ export const typography = {
   josefinSans: {
     name: 'Josefin Sans',
     description: 'Full Typeface',
-    fontFamily: 'var(--font-josefin-sans), Josefin Sans, sans-serif',
+    fontFamily: 'Josefin Sans, sans-serif',
     weights: {
       light: 300,
       regular: 400,
@@ -15,7 +15,7 @@ export const typography = {
   lato: {
     name: 'Lato',
     description: 'Regular',
-    fontFamily: 'var(--font-lato), Lato, sans-serif',
+    fontFamily: 'Lato, sans-serif',
     weights: {
       light: 300,
       regular: 400,

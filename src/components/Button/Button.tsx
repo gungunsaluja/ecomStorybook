@@ -1,104 +1,39 @@
 import React from 'react';
-import './Button.css';
+import { ButtonProps } from './types';
+import clsx from 'clsx';
 
-export interface ButtonProps {
-  /** Button text */
-  children: React.ReactNode;
-  /** Button type */
-  type?: 'button' | 'submit' | 'reset';
-  /** Button variant */
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
-  /** Button size */
-  size?: 'small' | 'medium' | 'large';
-  /** Whether the button is disabled */
-  disabled?: boolean;
-  /** Whether the button is loading */
-  loading?: boolean;
-  /** Button width */
-  fullWidth?: boolean;
-  /** Custom className */
-  className?: string;
-  /** Click handler */
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  /** Focus handler */
-  onFocus?: (e: React.FocusEvent<HTMLButtonElement>) => void;
-  /** Blur handler */
-  onBlur?: (e: React.FocusEvent<HTMLButtonElement>) => void;
-  /** Button id */
-  id?: string;
-  /** Button name */
-  name?: string;
-  /** Button value */
-  value?: string;
-}
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ variant = 'primary', onClick, height, width, text, color, textColor, className, ...props }, ref) => {
+    const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
 
-/**
- * Button component with various styles and states
- * Matches the pink "Send Mail" button from the form design
- */
-export const Button = ({
-  children,
-  type = 'button',
-  variant = 'primary',
-  size = 'medium',
-  disabled = false,
-  loading = false,
-  fullWidth = false,
-  className = '',
-  onClick,
-  onFocus,
-  onBlur,
-  id,
-  name,
-  value,
-}: ButtonProps) => {
-  const buttonClasses = [
-    'button',
-    `button--${variant}`,
-    `button--${size}`,
-    fullWidth && 'button--full-width',
-    disabled && 'button--disabled',
-    loading && 'button--loading',
-    className,
-  ].filter(Boolean).join(' ');
+    const variantStyles = {
+      primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
+      secondary: 'bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500',
+    };
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!disabled && !loading && onClick) {
-      onClick(e);
-    }
-  };
+    const customStyle: React.CSSProperties | undefined = color || textColor ? {
+      backgroundColor: color,
+      color: textColor,
+    } : undefined;
 
-  const handleFocus = (e: React.FocusEvent<HTMLButtonElement>) => {
-    if (onFocus) {
-      onFocus(e);
-    }
-  };
+    return (
+      <button
+        ref={ref}
+        onClick={onClick}
+        className={clsx(
+          baseStyles,
+          !color && variant && variantStyles[variant.toLowerCase() as keyof typeof variantStyles],
+          className
+        )}
+        style={{ height, width, ...customStyle }}
+        {...props}
+      >
+        {text}
+      </button>
+    );
+  }
+);
 
-  const handleBlur = (e: React.FocusEvent<HTMLButtonElement>) => {
-    if (onBlur) {
-      onBlur(e);
-    }
-  };
+Button.displayName = 'Button';
 
-  return (
-    <button
-      id={id}
-      name={name}
-      value={value}
-      type={type}
-      className={buttonClasses}
-      disabled={disabled || loading}
-      onClick={handleClick}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-    >
-      {loading && <span className="button__spinner" />}
-      <span className={loading ? 'button__text--loading' : 'button__text'}>
-        {children}
-      </span>
-    </button>
-  );
-};
-
-export default Button;
-
+export { Button };
