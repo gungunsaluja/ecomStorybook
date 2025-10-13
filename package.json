@@ -1,5 +1,5 @@
 {
-  "name": "ecomdesignsystem",
+  "name": "@gungunsaluja/ecom-design-system",
   "version": "1.0.0",
   "type": "module",
   "description": "A comprehensive React design system for e-commerce applications with Storybook documentation",
@@ -10,10 +10,6 @@
     "dist"
   ],
   "private": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-username/ecomdesignsystem.git"
-  },
   "keywords": [
     "react",
     "design-system",
@@ -23,7 +19,7 @@
     "typescript",
     "tailwindcss"
   ],
-  "author": "Your Name",
+  "author": "gungunsaluja",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
