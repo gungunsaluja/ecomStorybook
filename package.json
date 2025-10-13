@@ -1,5 +1,5 @@
 {
-  "name": "@gungunsaluja/ecom-design-system",
+  "name": "ecomdesignsystem",
   "version": "1.0.0",
   "type": "module",
   "description": "A comprehensive React design system for e-commerce applications with Storybook documentation",
